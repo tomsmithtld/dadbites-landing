@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DadBites - Baby Food Safety Guide for Dads</title>
+    <meta name="description" content="Know what your baby can eat and when. Age-appropriate food database, allergen tracking, and meal logging for new dads. Coming soon.">
+    <meta property="og:title" content="DadBites - Baby Food Safety Guide for Dads">
+    <meta property="og:description" content="Know what your baby can eat and when. Age-appropriate food database, allergen tracking, and meal logging. Coming soon.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dadbites.33c.dev">
+    <meta property="og:image" content="https://dadbites.33c.dev/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥑</text></svg>">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #0C1410;
+            --bg-card: rgba(18, 32, 24, 0.6);
+            --green: #22C55E;
+            --green-light: #4ADE80;
+            --green-glow: rgba(34, 197, 94, 0.2);
+            --amber: #F59E0B;
+            --amber-glow: rgba(245, 158, 11, 0.2);
+            --red: #EF4444;
+            --white: #edf5f0;
+            --white-70: rgba(237, 245, 240, 0.7);
+            --white-40: rgba(237, 245, 240, 0.4);
+            --white-10: rgba(237, 245, 240, 0.1);
+            --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        html { scroll-behavior: smooth; background: var(--bg); }
+        body { font-family: var(--font); background: var(--bg); color: var(--white); line-height: 1.65; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+        .glow { position: fixed; border-radius: 50%; filter: blur(140px); z-index: 0; pointer-events: none; }
+        .glow--1 { width: 450px; height: 450px; background: radial-gradient(circle, rgba(34,197,94,0.08) 0%, transparent 70%); top: -80px; right: -60px; animation: drift 20s ease-in-out infinite alternate; }
+        .glow--2 { width: 350px; height: 350px; background: radial-gradient(circle, rgba(245,158,11,0.05) 0%, transparent 70%); bottom: 20%; left: -100px; animation: drift 17s ease-in-out infinite alternate-reverse; }
+        @keyframes drift { 0% { transform: translate(0,0); } 100% { transform: translate(20px,-18px); } }
+
+        .container { max-width: 960px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+        section { position: relative; z-index: 1; }
+
+        .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .rd1 { transition-delay: .1s; } .rd2 { transition-delay: .2s; } .rd3 { transition-delay: .3s; } .rd4 { transition-delay: .4s; }
+
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 14px 0; transition: background 0.3s; }
+        nav.scrolled { background: rgba(12,20,16,0.88); backdrop-filter: blur(18px); border-bottom: 1px solid var(--white-10); }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--white); font-size: 18px; font-weight: 700; }
+        .nav-logo .a { color: var(--green-light); }
+        .nav-cta { padding: 8px 18px; background: var(--green); color: #0C1410; border: none; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
+        .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 16px var(--green-glow); }
+
+        .hero { min-height: 100vh; display: flex; align-items: center; padding: 120px 0 80px; text-align: center; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; background: var(--white-10); border: 1px solid var(--white-10); border-radius: 100px; font-size: 13px; color: var(--green-light); font-weight: 500; margin-bottom: 24px; }
+        .hero-badge .dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
+        .hero h1 { font-size: clamp(32px, 5vw, 50px); font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 20px; }
+        .hero h1 .hl { color: var(--green-light); }
+        .hero p { font-size: 18px; color: var(--white-70); max-width: 540px; margin: 0 auto 28px; }
+
+        /* Food emoji row */
+        .food-row { display: flex; justify-content: center; gap: 12px; margin-bottom: 32px; flex-wrap: wrap; }
+        .food-item { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+        .food-item .emoji { font-size: 32px; animation: bounce 2.8s ease-in-out infinite; }
+        .food-item:nth-child(2) .emoji { animation-delay: .15s; }
+        .food-item:nth-child(3) .emoji { animation-delay: .3s; }
+        .food-item:nth-child(4) .emoji { animation-delay: .45s; }
+        .food-item:nth-child(5) .emoji { animation-delay: .6s; }
+        .food-item:nth-child(6) .emoji { animation-delay: .75s; }
+        .food-item .tag { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+        .tag--safe { background: rgba(34,197,94,0.2); color: var(--green-light); }
+        .tag--caution { background: rgba(245,158,11,0.2); color: var(--amber); }
+        .tag--avoid { background: rgba(239,68,68,0.2); color: var(--red); }
+        @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+
+        .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .btn-p { padding: 14px 28px; background: var(--green); color: #0C1410; border: none; border-radius: 10px; font-size: 16px; font-weight: 700; text-decoration: none; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
+        .btn-p:hover { transform: translateY(-2px); box-shadow: 0 6px 24px var(--green-glow); }
+        .btn-o { padding: 14px 28px; background: transparent; color: var(--white); border: 1px solid var(--white-40); border-radius: 10px; font-size: 16px; font-weight: 600; text-decoration: none; transition: border-color 0.2s; }
+        .btn-o:hover { border-color: var(--green-light); color: var(--green-light); }
+        .hero-sub { font-size: 13px; color: var(--white-40); margin-top: 18px; }
+
+        .features { padding: 100px 0; }
+        .sl { font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--green-light); font-weight: 600; margin-bottom: 12px; }
+        .st { font-size: clamp(26px, 3.5vw, 36px); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 48px; line-height: 1.2; }
+        .fg { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+        .fc { background: var(--bg-card); border: 1px solid var(--white-10); border-radius: 14px; padding: 26px; transition: border-color 0.3s, transform 0.3s; }
+        .fc:hover { border-color: var(--green); transform: translateY(-3px); }
+        .fi { width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 14px; }
+        .fi--db { background: rgba(34,197,94,0.15); }
+        .fi--al { background: rgba(239,68,68,0.15); }
+        .fi--ml { background: rgba(245,158,11,0.15); }
+        .fi--qr { background: rgba(99,102,241,0.15); }
+        .fc h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+        .fc p { font-size: 14px; color: var(--white-70); line-height: 1.55; }
+
+        .context { padding: 80px 0; }
+        .context-box { background: var(--bg-card); border: 1px solid var(--white-10); border-radius: 18px; padding: 44px; max-width: 660px; margin: 0 auto; }
+        .context-box h2 { font-size: 24px; font-weight: 700; margin-bottom: 16px; }
+        .context-box p { font-size: 15px; color: var(--white-70); margin-bottom: 14px; line-height: 1.7; }
+        .context-box p:last-child { margin-bottom: 0; }
+
+        .waitlist { padding: 80px 0 100px; text-align: center; }
+        .wc { background: linear-gradient(135deg, rgba(34,197,94,0.06) 0%, rgba(245,158,11,0.04) 100%); border: 1px solid var(--white-10); border-radius: 18px; padding: 48px 32px; max-width: 520px; margin: 0 auto; }
+        .wc h2 { font-size: 26px; font-weight: 700; margin-bottom: 8px; }
+        .wc p { color: var(--white-70); margin-bottom: 24px; font-size: 15px; }
+        .wf { display: flex; gap: 10px; max-width: 400px; margin: 0 auto; }
+        .wf input { flex: 1; padding: 12px 16px; background: rgba(12,20,16,0.8); border: 1px solid var(--white-10); border-radius: 8px; color: var(--white); font-size: 15px; font-family: var(--font); outline: none; }
+        .wf input:focus { border-color: var(--green); }
+        .wf input::placeholder { color: var(--white-40); }
+        .wf button { padding: 12px 24px; background: var(--green); color: #0C1410; border: none; border-radius: 8px; font-size: 15px; font-weight: 700; cursor: pointer; transition: transform 0.2s; white-space: nowrap; }
+        .wf button:hover { transform: translateY(-1px); box-shadow: 0 4px 16px var(--green-glow); }
+
+        footer { padding: 32px 0; border-top: 1px solid var(--white-10); font-size: 13px; color: var(--white-40); }
+        footer .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+        footer a { color: var(--white-40); text-decoration: none; }
+        footer a:hover { color: var(--green-light); }
+        .fl { display: flex; gap: 20px; }
+
+        @media (max-width: 600px) {
+            .hero { padding: 100px 0 60px; }
+            .wf { flex-direction: column; }
+            .wf button { width: 100%; }
+            .context-box { padding: 28px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="glow glow--1"></div>
+    <div class="glow glow--2"></div>
+
+    <nav id="nav">
+        <div class="container">
+            <a href="#" class="nav-logo">🥑 Dad<span class="a">Bites</span></a>
+            <a href="#waitlist" class="nav-cta">Join Waitlist</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="reveal"><div class="hero-badge"><span class="dot"></span> Coming soon to iOS and Android</div></div>
+            <h1 class="reveal rd1">Know What's <span class="hl">Safe</span> to Feed Your Baby</h1>
+            <div class="food-row reveal rd2">
+                <div class="food-item"><span class="emoji">🥑</span><span class="tag tag--safe">safe</span></div>
+                <div class="food-item"><span class="emoji">🍌</span><span class="tag tag--safe">safe</span></div>
+                <div class="food-item"><span class="emoji">🥚</span><span class="tag tag--caution">allergen</span></div>
+                <div class="food-item"><span class="emoji">🍯</span><span class="tag tag--avoid">avoid</span></div>
+                <div class="food-item"><span class="emoji">🥜</span><span class="tag tag--caution">allergen</span></div>
+                <div class="food-item"><span class="emoji">🫐</span><span class="tag tag--safe">safe</span></div>
+            </div>
+            <p class="reveal rd3">DadBites tells you exactly what your baby can eat at their age. 80+ foods with safety ratings, allergen flags, and portion guidance. Because googling "can baby eat X" at 3am gets old fast.</p>
+            <div class="cta-row reveal rd4">
+                <a href="#waitlist" class="btn-p">Join the Waitlist</a>
+                <a href="#features" class="btn-o">Learn More</a>
+            </div>
+            <p class="hero-sub reveal rd4">Free. Based on NHS and WHO guidelines.</p>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <div class="sl reveal">Features</div>
+            <h2 class="st reveal rd1">Everything you need, nothing you don't</h2>
+            <div class="fg">
+                <div class="fc reveal rd1">
+                    <div class="fi fi--db">📖</div>
+                    <h3>Food Database</h3>
+                    <p>80+ foods sorted by age. Search "sweet potato" and get safety status, allergen info, and prep tips instantly.</p>
+                </div>
+                <div class="fc reveal rd2">
+                    <div class="fi fi--al">⚠️</div>
+                    <h3>Allergen Tracker</h3>
+                    <p>Track the top 9 allergens as you introduce them. Log reactions. Build your baby's food profile over time.</p>
+                </div>
+                <div class="fc reveal rd3">
+                    <div class="fi fi--ml">📝</div>
+                    <h3>Meal Log</h3>
+                    <p>Quick meal logging with food search. See what your baby ate today, this week, and which foods they've tried.</p>
+                </div>
+                <div class="fc reveal rd4">
+                    <div class="fi fi--qr">💡</div>
+                    <h3>Quick Reference</h3>
+                    <p>Choking hazard cards, portion sizes by age, and prep guides. The stuff you need right when you need it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="context" id="context">
+        <div class="container">
+            <div class="context-box reveal">
+                <h2>Why I built this</h2>
+                <p>My partner went back to work and I was on solo feeding duty. I had no idea what was safe for a 7 month old. Is avocado ok? What about eggs? Can he have bread yet?</p>
+                <p>I spent more time googling than actually feeding the kid. Every site had different advice. Some were clearly wrong.</p>
+                <p>DadBites pulls from NHS and WHO weaning guidelines. Not mum blogs, not AI-generated content. Actual guidance that paediatricians would agree with. All in one place, searchable in 2 seconds.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="waitlist" id="waitlist">
+        <div class="container">
+            <div class="wc reveal">
+                <h2>Get Early Access</h2>
+                <p>We'll email you when DadBites is ready to download.</p>
+                <form class="wf" action="https://formspree.io/f/PLACEHOLDER" method="POST">
+                    <input type="email" name="email" placeholder="your@email.com" required>
+                    <button type="submit">Join</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <span>Built by Tom. &copy; 2026</span>
+            <div class="fl"><a href="#">Privacy</a><a href="#">Terms</a></div>
+        </div>
+    </footer>
+
+    <script>
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => { e.preventDefault(); const t = document.querySelector(a.getAttribute('href')); if (t) t.scrollIntoView({ behavior: 'smooth' }); });
+        });
+    </script>
+</body>
+</html>
