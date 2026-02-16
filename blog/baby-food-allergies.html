@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby Food Allergies: What Every Dad Should Know | DadBites</title>
+    <meta name="description" content="When to introduce allergens, what reactions look like, and how to track it all without losing the plot. The no-panic dad's guide to baby food allergies.">
+    <meta property="og:title" content="Baby Food Allergies: What Every Dad Should Know">
+    <meta property="og:description" content="When to introduce allergens, what reactions look like, and how to track it all.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://dadbites.33c.dev/blog/baby-food-allergies">
+    <meta property="og:image" content="https://dadbites.33c.dev/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://dadbites.33c.dev/blog/baby-food-allergies">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥑</text></svg>">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #0C1410;
+            --bg-card: rgba(18, 32, 24, 0.6);
+            --green: #22C55E;
+            --green-light: #4ADE80;
+            --green-glow: rgba(34, 197, 94, 0.2);
+            --amber: #F59E0B;
+            --amber-glow: rgba(245, 158, 11, 0.2);
+            --red: #EF4444;
+            --white: #edf5f0;
+            --white-70: rgba(237, 245, 240, 0.7);
+            --white-40: rgba(237, 245, 240, 0.4);
+            --white-10: rgba(237, 245, 240, 0.1);
+            --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        html { scroll-behavior: smooth; background: var(--bg); }
+        body { font-family: var(--font); background: var(--bg); color: var(--white); line-height: 1.75; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        .glow { position: fixed; border-radius: 50%; filter: blur(140px); z-index: 0; pointer-events: none; }
+        .glow--1 { width: 450px; height: 450px; background: radial-gradient(circle, rgba(34,197,94,0.06) 0%, transparent 70%); top: -80px; right: -60px; }
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 14px 0; background: rgba(12, 20, 16, 0.88); backdrop-filter: blur(18px); border-bottom: 1px solid var(--white-10); }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--white); font-size: 18px; font-weight: 700; }
+        .nav-logo .accent { color: var(--green-light); }
+        .nav-cta { padding: 8px 18px; background: var(--green); color: #0C1410; border: none; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
+        .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 18px var(--green-glow); }
+        .container { max-width: 720px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+        article { padding: 120px 0 60px; }
+        .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--white-40); margin-bottom: 32px; }
+        .breadcrumb a { color: var(--green-light); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        article h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 16px; }
+        .article-meta { font-size: 14px; color: var(--white-40); margin-bottom: 40px; display: flex; align-items: center; gap: 12px; }
+        article h2 { font-size: 24px; font-weight: 700; margin: 48px 0 16px; color: var(--white); }
+        article h3 { font-size: 20px; font-weight: 600; margin: 32px 0 12px; color: var(--white); }
+        article p { font-size: 17px; color: var(--white-70); margin-bottom: 20px; }
+        article ul, article ol { margin: 0 0 24px 20px; color: var(--white-70); font-size: 17px; }
+        article li { margin-bottom: 8px; }
+        .callout { background: var(--bg-card); border-left: 3px solid var(--green); padding: 20px 24px; border-radius: 0 12px 12px 0; margin: 32px 0; }
+        .callout p { color: var(--white); margin-bottom: 0; font-size: 16px; }
+        .callout p + p { margin-top: 12px; }
+        .callout--warning { border-left-color: var(--amber); background: rgba(245, 158, 11, 0.06); }
+        .callout--danger { border-left-color: var(--red); background: rgba(239, 68, 68, 0.06); }
+        .allergen-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 15px; }
+        .allergen-table th { text-align: left; padding: 12px; border-bottom: 2px solid var(--white-10); color: var(--white); font-weight: 600; }
+        .allergen-table td { padding: 12px; border-bottom: 1px solid var(--white-10); color: var(--white-70); }
+        .allergen-table tr:last-child td { border-bottom: none; }
+        .cta-section { text-align: center; padding: 60px 0; margin-top: 40px; border-top: 1px solid var(--white-10); }
+        .cta-section h2 { margin-top: 0; }
+        .cta-section p { color: var(--white-40); max-width: 480px; margin: 0 auto 24px; }
+        .cta-btn { display: inline-block; padding: 14px 28px; background: var(--green); color: #0C1410; border: none; border-radius: 10px; font-size: 16px; font-weight: 700; text-decoration: none; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 24px var(--green-glow); }
+        .related { margin: 48px 0 0; padding: 32px 0; border-top: 1px solid var(--white-10); }
+        .related h3 { font-size: 18px; font-weight: 600; margin-bottom: 16px; margin-top: 0; }
+        .related a { display: block; padding: 12px 16px; background: var(--bg-card); border: 1px solid var(--white-10); border-radius: 10px; color: var(--green-light); text-decoration: none; margin-bottom: 8px; font-size: 15px; transition: border-color 0.2s; }
+        .related a:hover { border-color: var(--green); }
+        .related a span { display: block; color: var(--white-40); font-size: 13px; margin-top: 4px; }
+        footer { text-align: center; padding: 40px 0; color: var(--white-40); font-size: 13px; border-top: 1px solid var(--white-10); }
+        footer a { color: var(--white-40); text-decoration: none; }
+        footer a:hover { color: var(--white); }
+        @media (max-width: 640px) { article { padding-top: 100px; } .container { padding: 0 16px; } .allergen-table { font-size: 13px; } .allergen-table th, .allergen-table td { padding: 8px; } }
+    </style>
+</head>
+<body>
+    <div class="glow glow--1"></div>
+    <nav>
+        <div class="container">
+            <a href="/" class="nav-logo">🥑 Dad<span class="accent">Bites</span></a>
+            <a href="/#waitlist" class="nav-cta">Join Waitlist</a>
+        </div>
+    </nav>
+    <article>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="/">DadBites</a> <span>/</span> <a href="/blog/">Blog</a> <span>/</span> <span>Baby Food Allergies</span>
+            </div>
+            <h1>Baby Food Allergies: What Every Dad Should Know</h1>
+            <div class="article-meta">
+                <span>By Tom</span>
+                <span>|</span>
+                <span>February 2026</span>
+                <span>|</span>
+                <span>6 min read</span>
+            </div>
+
+            <p>food allergies are the part of weaning that terrifies new parents. and I get it. you're giving your baby something new and there's a small chance their body decides it's the enemy. that's genuinely scary.</p>
+
+            <p>but here's the good news: the research on this has moved a lot in the last decade, and the advice now is clearer than it's ever been. early introduction is protective, most reactions are mild, and there's a system for doing this that makes it manageable.</p>
+
+            <h2>The big shift: introduce early, not late</h2>
+
+            <p>for years, the advice was to delay common allergens. don't give peanuts until age 3. avoid eggs until 12 months. the thinking was that giving allergens later would reduce the risk of allergy.</p>
+
+            <p>turns out, that was backwards.</p>
+
+            <p>the LEAP trial (Learning Early About Peanut allergy, 2015) showed that introducing peanuts to high-risk babies between 4 and 11 months reduced peanut allergy by about 80%. the EAT study (2016) supported similar findings across multiple allergens.</p>
+
+            <div class="callout">
+                <p>current NHS and BSACI guidance: introduce common allergens from around 6 months of age (or whenever your baby starts solids). don't delay them. early exposure is protective.</p>
+            </div>
+
+            <h2>The 14 major allergens</h2>
+
+            <p>in the UK, these are the 14 allergens that must be declared on food labels. the top 8 are the ones most relevant for baby weaning:</p>
+
+            <table class="allergen-table">
+                <thead>
+                    <tr>
+                        <th>Allergen</th>
+                        <th>How to introduce</th>
+                        <th>When</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Peanuts</strong></td>
+                        <td>Smooth peanut butter mixed into porridge</td>
+                        <td>From 6 months</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Eggs</strong></td>
+                        <td>Well-cooked scrambled egg</td>
+                        <td>From 6 months</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cow's milk</strong></td>
+                        <td>In cooking (not as a drink until 12m)</td>
+                        <td>From 6 months</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Wheat</strong></td>
+                        <td>Toast fingers, pasta</td>
+                        <td>From 6 months</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Soya</strong></td>
+                        <td>Tofu pieces, soy in sauces</td>
+                        <td>From 6 months</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fish</strong></td>
+                        <td>Cooked flaked white fish</td>
+                        <td>From 6 months</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sesame</strong></td>
+                        <td>Tahini mixed into purees</td>
+                        <td>From 6 months</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tree nuts</strong></td>
+                        <td>Nut butters (never whole nuts)</td>
+                        <td>From 6 months</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>The method: one at a time</h2>
+
+            <p>the standard approach is simple:</p>
+
+            <ol>
+                <li><strong>introduce one new allergen.</strong> give a small amount, ideally in the morning so you can watch for reactions during the day.</li>
+                <li><strong>wait 2-3 days.</strong> watch for any reaction. if nothing happens, that allergen is cleared.</li>
+                <li><strong>keep giving it regularly.</strong> this is the bit people forget. one-off exposure isn't enough. keep that food in the rotation, ideally weekly.</li>
+                <li><strong>introduce the next allergen.</strong> repeat the cycle.</li>
+            </ol>
+
+            <p>at this pace, you'll have all 8 major allergens introduced within about a month. not bad.</p>
+
+            <h2>What reactions look like</h2>
+
+            <h3>Mild reactions (most common)</h3>
+            <ul>
+                <li>redness or hives around the mouth or on the skin</li>
+                <li>mild swelling of lips or eyes</li>
+                <li>runny nose or sneezing</li>
+                <li>stomach upset, vomiting</li>
+                <li>itchy skin</li>
+            </ul>
+            <p>these usually appear within minutes to a couple of hours. they're unpleasant but not dangerous. antihistamine (like Piriton, check with your pharmacist for the right dose) usually sorts it.</p>
+
+            <h3>Severe reactions (rare but important)</h3>
+            <div class="callout--danger callout">
+                <p><strong>call 999 immediately if you see:</strong></p>
+                <p>- difficulty breathing or wheezing</p>
+                <p>- swelling of the tongue or throat</p>
+                <p>- baby going floppy or unresponsive</p>
+                <p>- persistent vomiting</p>
+                <p>this is anaphylaxis. it's very rare in babies but you need to know the signs. don't wait to see if it gets better.</p>
+            </div>
+
+            <h2>Tracking matters</h2>
+
+            <p>here's where it gets practical. when you're introducing 8 allergens over the course of a month, while also giving your baby normal food, and you're sleep-deprived and can't remember what day it is... you need to write things down.</p>
+
+            <p>I used a notebook at first. then I lost the notebook. then I used my phone notes. then I couldn't find the note. this is why I built the allergen tracker in DadBites.</p>
+
+            <p>the app logs what you've introduced, when, and whether there was any reaction. it tells you which allergens you haven't tried yet. and it reminds you to keep giving cleared allergens regularly (the "keep it in rotation" part that everyone forgets).</p>
+
+            <h2>Family history and higher risk</h2>
+
+            <p>if your baby has eczema, or there's a family history of food allergies, asthma, or eczema, your baby is at higher risk of developing a food allergy. this doesn't mean you should delay introduction. if anything, early introduction is even more important for these babies.</p>
+
+            <p>but talk to your GP or health visitor first. they might suggest introducing peanut earlier (from around 4 months in some cases) or doing it under medical supervision for the first time.</p>
+
+            <div class="callout">
+                <p>this article is informational, not medical advice. every baby is different. if you're unsure about anything, talk to your GP or health visitor. they're there for exactly this kind of question.</p>
+            </div>
+
+            <div class="related">
+                <h3>More from the blog</h3>
+                <a href="/blog/when-to-start-solids">
+                    When to Start Your Baby on Solids: A Dad's Guide
+                    <span>Signs of readiness, first foods, and the mistakes I made</span>
+                </a>
+            </div>
+
+            <div class="cta-section">
+                <h2>Track allergens with DadBites</h2>
+                <p>Know what your baby has tried, what's left, and get reminders to keep cleared allergens in rotation.</p>
+                <a href="/#waitlist" class="cta-btn">Join the Waitlist</a>
+            </div>
+        </div>
+    </article>
+    <footer>
+        <div class="container">
+            <p>Built by Tom &nbsp;|&nbsp; <a href="/#privacy">Privacy</a> &nbsp;|&nbsp; <a href="/#terms">Terms</a> &nbsp;|&nbsp; &copy; 2026 DadBites</p>
+        </div>
+    </footer>
+</body>
+</html>
