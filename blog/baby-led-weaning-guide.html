@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby Led Weaning: A Dad's No-Nonsense Guide | DadBites</title>
+    <meta name="description" content="Skip the purees, hand them real food. Baby led weaning explained for dads who want the practical version, not the 400-page parenting book.">
+    <meta property="og:title" content="Baby Led Weaning: A Dad's No-Nonsense Guide">
+    <meta property="og:description" content="Skip the purees, hand them real food. BLW explained for dads.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://dadbites.33c.dev/blog/baby-led-weaning-guide">
+    <meta property="og:image" content="https://dadbites.33c.dev/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://dadbites.33c.dev/blog/baby-led-weaning-guide">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"Baby Led Weaning: A Dad's No-Nonsense Guide","description":"Skip the purees, hand them real food. Baby led weaning explained for dads who want the practical version, not the 400-page parenting book.","author":{"@type":"Person","name":"Tom"},"publisher":{"@type":"Organization","name":"DadBites","url":"https://dadbites.33c.dev"},"datePublished":"2026-02-16","url":"https://dadbites.33c.dev/blog/baby-led-weaning-guide","image":"https://dadbites.33c.dev/og-image.png"}
+    </script>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥑</text></svg>">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #0C1410;
+            --bg-card: rgba(18, 32, 24, 0.6);
+            --green: #22C55E;
+            --green-light: #4ADE80;
+            --green-glow: rgba(34, 197, 94, 0.2);
+            --amber: #F59E0B;
+            --amber-glow: rgba(245, 158, 11, 0.2);
+            --red: #EF4444;
+            --white: #edf5f0;
+            --white-70: rgba(237, 245, 240, 0.7);
+            --white-40: rgba(237, 245, 240, 0.4);
+            --white-10: rgba(237, 245, 240, 0.1);
+            --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        html { scroll-behavior: smooth; background: var(--bg); }
+        body { font-family: var(--font); background: var(--bg); color: var(--white); line-height: 1.75; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        .glow { position: fixed; border-radius: 50%; filter: blur(140px); z-index: 0; pointer-events: none; }
+        .glow--1 { width: 450px; height: 450px; background: radial-gradient(circle, rgba(34,197,94,0.06) 0%, transparent 70%); top: -80px; right: -60px; }
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 14px 0; background: rgba(12, 20, 16, 0.88); backdrop-filter: blur(18px); border-bottom: 1px solid var(--white-10); }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--white); font-size: 18px; font-weight: 700; }
+        .nav-logo .accent { color: var(--green-light); }
+        .nav-cta { padding: 8px 18px; background: var(--green); color: #0C1410; border: none; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
+        .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 18px var(--green-glow); }
+        .container { max-width: 720px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+        article { padding: 120px 0 60px; }
+        .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--white-40); margin-bottom: 32px; }
+        .breadcrumb a { color: var(--green-light); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        article h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 16px; }
+        .article-meta { font-size: 14px; color: var(--white-40); margin-bottom: 40px; display: flex; align-items: center; gap: 12px; }
+        article h2 { font-size: 24px; font-weight: 700; margin: 48px 0 16px; color: var(--white); }
+        article h3 { font-size: 20px; font-weight: 600; margin: 32px 0 12px; color: var(--white); }
+        article p { font-size: 17px; color: var(--white-70); margin-bottom: 20px; }
+        article ul, article ol { margin: 0 0 24px 20px; color: var(--white-70); font-size: 17px; }
+        article li { margin-bottom: 8px; }
+        .callout { background: var(--bg-card); border-left: 3px solid var(--green); padding: 20px 24px; border-radius: 0 12px 12px 0; margin: 32px 0; }
+        .callout p { color: var(--white); margin-bottom: 0; font-size: 16px; }
+        .callout p + p { margin-top: 12px; }
+        .callout--warning { border-left-color: var(--amber); background: rgba(245, 158, 11, 0.06); }
+        .callout--danger { border-left-color: var(--red); background: rgba(239, 68, 68, 0.06); }
+        .food-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 24px 0; }
+        .food-item { background: var(--bg-card); border: 1px solid var(--white-10); border-radius: 10px; padding: 16px; }
+        .food-item .name { font-weight: 700; color: var(--white); font-size: 15px; margin-bottom: 4px; }
+        .food-item .how { font-size: 13px; color: var(--white-40); }
+        .cta-section { text-align: center; padding: 60px 0; margin-top: 40px; border-top: 1px solid var(--white-10); }
+        .cta-section h2 { margin-top: 0; }
+        .cta-section p { color: var(--white-40); max-width: 480px; margin: 0 auto 24px; }
+        .cta-btn { display: inline-block; padding: 14px 28px; background: var(--green); color: #0C1410; border: none; border-radius: 10px; font-size: 16px; font-weight: 700; text-decoration: none; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 24px var(--green-glow); }
+        .related { margin: 48px 0 0; padding: 32px 0; border-top: 1px solid var(--white-10); }
+        .related h3 { font-size: 18px; font-weight: 600; margin-bottom: 16px; margin-top: 0; }
+        .related a { display: block; padding: 12px 16px; background: var(--bg-card); border: 1px solid var(--white-10); border-radius: 10px; color: var(--green-light); text-decoration: none; margin-bottom: 8px; font-size: 15px; transition: border-color 0.2s; }
+        .related a:hover { border-color: var(--green); }
+        .related a span { display: block; color: var(--white-40); font-size: 13px; margin-top: 4px; }
+        footer { text-align: center; padding: 40px 0; color: var(--white-40); font-size: 13px; border-top: 1px solid var(--white-10); }
+        footer a { color: var(--white-40); text-decoration: none; }
+        footer a:hover { color: var(--white); }
+        @media (max-width: 640px) { article { padding-top: 100px; } .container { padding: 0 16px; } .food-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="glow glow--1"></div>
+    <nav>
+        <div class="container">
+            <a href="/" class="nav-logo">🥑 Dad<span class="accent">Bites</span></a>
+            <a href="/#waitlist" class="nav-cta">Join Waitlist</a>
+        </div>
+    </nav>
+    <article>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="/">DadBites</a> <span>/</span> <a href="/blog/">Blog</a> <span>/</span> <span>Baby Led Weaning</span>
+            </div>
+            <h1>Baby Led Weaning: A Dad's No-Nonsense Guide</h1>
+            <div class="article-meta">
+                <span>By Tom</span>
+                <span>|</span>
+                <span>February 2026</span>
+                <span>|</span>
+                <span>7 min read</span>
+            </div>
+
+            <p>baby led weaning (BLW) is exactly what it sounds like: instead of spoon-feeding purees, you give your baby actual food and let them feed themselves. it sounds terrifying. it's also becoming the recommended approach by a lot of paediatricians.</p>
+
+            <p>I was firmly in the "surely you need purees first" camp until my health visitor explained the research. now I'm a convert. here's the practical version, no fluff, no judgement if you still want to do purees too.</p>
+
+            <h2>What baby led weaning actually is</h2>
+
+            <p>BLW means offering your baby soft, appropriately-sized pieces of food from around 6 months. they pick it up, explore it, mouth it, and eventually eat it. you don't spoon-feed them. they're in control of what goes in their mouth.</p>
+
+            <p>that "in control" part is the whole point. the theory is that babies who control their own eating develop better relationships with food long-term. they learn to stop when they're full (instead of being encouraged to finish a jar). they learn different textures early. and they develop fine motor skills from the pincer grip required to pick up small foods.</p>
+
+            <div class="callout">
+                <p>BLW doesn't mean you never use a spoon. things like yoghurt and porridge work better on a preloaded spoon that you hand to the baby. it's about them having control, not about eliminating all utensils.</p>
+            </div>
+
+            <h2>When to start</h2>
+
+            <p>around 6 months, when your baby shows all three signs of readiness:</p>
+
+            <ol>
+                <li><strong>they can sit up with minimal support</strong> and hold their head steady. this is the most important one for safety.</li>
+                <li><strong>they've lost the tongue-thrust reflex</strong> (they don't automatically push food back out with their tongue).</li>
+                <li><strong>they can grab things and bring them to their mouth</strong> with reasonable coordination.</li>
+            </ol>
+
+            <p>all three. not just one. some babies are ready at 5.5 months, some closer to 7. the NHS recommends not starting any solids (purees or BLW) before 6 months.</p>
+
+            <h2>Best first foods for BLW</h2>
+
+            <p>start with foods that are soft enough to squish between your finger and thumb. cut them into chip-shaped pieces (long and thin) so your baby can grip them in their fist with some sticking out the top to mouth on.</p>
+
+            <div class="food-grid">
+                <div class="food-item">
+                    <div class="name">Steamed broccoli</div>
+                    <div class="how">florets make a natural handle. steam until very soft</div>
+                </div>
+                <div class="food-item">
+                    <div class="name">Banana</div>
+                    <div class="how">cut in half lengthways. leave some skin on for grip</div>
+                </div>
+                <div class="food-item">
+                    <div class="name">Avocado</div>
+                    <div class="how">sliced into wedges. slippery, so roll in breadcrumbs if needed</div>
+                </div>
+                <div class="food-item">
+                    <div class="name">Sweet potato</div>
+                    <div class="how">roasted in chips. soft enough to gum, firm enough to hold</div>
+                </div>
+                <div class="food-item">
+                    <div class="name">Toast fingers</div>
+                    <div class="how">with butter or nut butter (if no allergy). easy to grip</div>
+                </div>
+                <div class="food-item">
+                    <div class="name">Cooked pasta</div>
+                    <div class="how">fusilli or penne shapes. easy to grip and soft to chew</div>
+                </div>
+            </div>
+
+            <h2>Gagging vs choking</h2>
+
+            <p>this is the part that scares every parent. here's the thing you need to know: gagging is normal, expected, and actually a safety mechanism. choking is rare but you need to know the difference.</p>
+
+            <p><strong>gagging:</strong> loud, coughing, retching sounds. baby goes red. eyes might water. they push the food forward with their tongue. this is their gag reflex working exactly as designed. it means the system is working. don't intervene. just wait.</p>
+
+            <p><strong>choking:</strong> silent. no coughing. baby goes pale or blue. this is the airway being blocked. this needs immediate first aid (back blows and chest thrusts).</p>
+
+            <div class="callout--danger callout">
+                <p>before starting BLW (or any solids), both parents should watch a baby first aid video covering choking response. St John Ambulance and the Red Cross both have free ones online. takes 15 minutes. do it before the first meal, not after a scare.</p>
+            </div>
+
+            <p>gagging is common in the first few weeks of BLW. it reduces as your baby learns to manage food in their mouth. it looks alarming but it's a learning process. the gag reflex in babies is triggered much further forward on the tongue than in adults, which is why they gag on things that seem small to us.</p>
+
+            <h2>The mess situation</h2>
+
+            <p>I'm not going to lie to you. BLW is messy. spectacularly messy. food on the floor, food in the hair, food in places you didn't think food could reach.</p>
+
+            <p>practical tips that helped us:</p>
+
+            <ul>
+                <li><strong>plastic splat mat under the highchair.</strong> pick it up after the meal, shake it into the bin. saves the carpet.</li>
+                <li><strong>long-sleeved bibs.</strong> the ones that cover arms and have a food catcher at the bottom. worth every penny.</li>
+                <li><strong>strip them down.</strong> in summer, just a nappy and a bib. less laundry.</li>
+                <li><strong>let the dog in.</strong> if you have a dog, they become the world's most efficient floor cleaner. (joke. mostly.)</li>
+            </ul>
+
+            <h2>BLW vs purees: you don't have to choose</h2>
+
+            <p>the internet makes it sound like you're either team BLW or team purees and they're mortal enemies. in reality, most families do a mix. BLW for meals where you have time and energy, pouches or purees when you're out or things are chaotic.</p>
+
+            <p>the research suggests that babies who do mostly BLW develop slightly better self-regulation around food. but a mixed approach is fine. the goal is getting your baby comfortable with real food textures, not winning a parenting methodology argument.</p>
+
+            <div class="callout--warning callout">
+                <p>one rule that applies regardless of method: no added salt or sugar before 12 months. their kidneys can't handle the salt, and sugar sets up bad habits early. also avoid whole nuts (choking hazard), honey (botulism risk), and raw or undercooked eggs.</p>
+            </div>
+
+            <h2>What to expect in the first month</h2>
+
+            <p>week 1-2: mostly exploration. very little actual eating. lots of squishing, licking, throwing, and confused looks. that's fine. milk is still the main source of nutrition until 12 months.</p>
+
+            <p>week 3-4: they start to figure out how to bite off pieces and move food around their mouth. you'll see actual chewing and swallowing. the gagging reduces. mealtimes get slightly less stressful.</p>
+
+            <p>month 2-3: proper eating. you'll notice they start to have preferences. some foods get demolished, others get thrown on the floor immediately. this is them developing taste preferences, which is exactly what you want.</p>
+
+            <div class="related">
+                <h3>More from the blog</h3>
+                <a href="/blog/when-to-start-solids">
+                    When to Start Your Baby on Solids: A Dad's Guide
+                    <span>readiness signs, good first foods, and the common mistakes</span>
+                </a>
+                <a href="/blog/baby-food-allergies">
+                    Baby Food Allergies: What Every Dad Should Know
+                    <span>when to introduce allergens and what reactions look like</span>
+                </a>
+                <a href="https://dadfuel.33c.dev/blog/quick-meals-new-dads" style="border-color: rgba(59, 130, 246, 0.3);">
+                    Quick Meals for New Dads (DadFuel Blog)
+                    <span>you need to eat too. 10-minute meals that actually fill you up</span>
+                </a>
+            </div>
+
+            <div class="cta-section">
+                <h2>Track what your baby eats</h2>
+                <p>DadBites logs meals, tracks allergen introductions, and spots patterns. So you remember what worked.</p>
+                <a href="/#waitlist" class="cta-btn">Join the Waitlist</a>
+            </div>
+        </div>
+    </article>
+    <footer>
+        <div class="container">
+            <p>Built by Tom &nbsp;|&nbsp; <a href="/#privacy">Privacy</a> &nbsp;|&nbsp; <a href="/#terms">Terms</a> &nbsp;|&nbsp; &copy; 2026 DadBites</p>
+        </div>
+    </footer>
+</body>
+</html>
